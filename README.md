@@ -20,6 +20,10 @@ Seungyeon Lee(School of Computer Science and Engineering, Chung-Ang University)
 
 ## How to implement
 
+### Dataset
+We use [PASCAL VOC 2007](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) whitch is popular dataset for Object detection.
+
+
 ### Using Tensorlfow - Minki Kang, Minkyu Kim
 
  For easy implementation, we use VGG or DenseNet which are made in Tensorflow so that input image size change to 224 x 224 when we use VGG as backbone network.
