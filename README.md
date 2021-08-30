@@ -7,10 +7,13 @@ This repository consist of YOLO implement code for CUAI 2021 summer conference. 
 YOLO v1 : https://arxiv.org/abs/1506.02640
 
 ## Members
-**Minki Kang**(School of Computer Science and Engineering, Chung-Ang University)
-**Minkyu Kim(https://github.com/MinkyuKim26)**(School of Electrical and Electronics Engineering)
-**Taeyun Kim**(School of Computer Science and Engineering, Chung-Ang University)
-**Seungyeon Lee**(School of Computer Science and Engineering, Chung-Ang University)
+Minki Kang(School of Computer Science and Engineering, Chung-Ang University)
+<br>
+[Minkyu Kim](https://github.com/MinkyuKim26)(School of Electrical and Electronics Engineering)
+<br>
+Taeyun Kim(School of Computer Science and Engineering, Chung-Ang University)
+<br>
+Seungyeon Lee(School of Computer Science and Engineering, Chung-Ang University)
 
 ## Short paper
 작성중!
