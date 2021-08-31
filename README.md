@@ -1,4 +1,4 @@
-# YOLOv1_implement_using_Tensorflow_or_Pytorch
+# YOLOv1_implement_using_Tensorflow_or_Pytorch(텐서플로우, 파이토치를 이용한 YOLO구현
 
 <img width="618" alt="YOLO_architecture" src="https://user-images.githubusercontent.com/50979281/130927332-1aefef43-c67e-48db-98fe-68cd0a1ad629.png">
 
@@ -6,18 +6,20 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCUAI-CAU%2FYOLOv1_implement_using_Tensorflow_or_Pytorch&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 
-This repository consist of YOLO implement code for CUAI 2021 summer conference. We made these codes using Tensorflow or Pyrotch.
+[텐서플로우](https://www.tensorflow.org)와 [파이토치](https://pytorch.org)를 이용해 YOLO의 최초 버전인 YOLO v1을 구현하며 객체탐지 모델이 어떤 과정을 거쳐 객체를 탐지하는지 알아보는 시간을 가졌습니다. 
+
 
 YOLO v1 : https://arxiv.org/abs/1506.02640
 
 ## Members
-[Minki Kang](https://github.com/bbx8216)(School of Computer Science and Engineering, Chung-Ang University)
+
+[강민기](https://github.com/bbx8216)(School of Computer Science and Engineering, Chung-Ang University)
 <br>
-[Minkyu Kim](https://github.com/MinkyuKim26)(School of Electrical and Electronics Engineering)
+[김민규](https://github.com/MinkyuKim26)(School of Electrical and Electronics Engineering)
 <br>
-[Taeyun Kim](https://github.com/KimTaeYun02)(School of Computer Science and Engineering, Chung-Ang University)
+[김태윤](https://github.com/KimTaeYun02)(School of Computer Science and Engineering, Chung-Ang University)
 <br>
-[Seungyeon Lee](https://github.com/tmddus2)(School of Computer Science and Engineering, Chung-Ang University)
+[이승연](https://github.com/tmddus2)(School of Computer Science and Engineering, Chung-Ang University)
 
 ## Short paper
 작성중!
@@ -25,16 +27,20 @@ YOLO v1 : https://arxiv.org/abs/1506.02640
 ## How to implement
 
 ### Dataset
-We use [PASCAL VOC 2007](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) whitch is popular dataset for Object detection.
+
+학습, 테스트를 위한 데이터셋으로 [PASCAL VOC 2007](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) 을 사용했습니다. PASCAL VOC 2007은 학습용, 테스트용으로 데이터셋을 나눴는데 학습용 데이터셋의 양을 보존하기 위해 테스트용 데이터셋의 일부를 떼어 검증용 데이터셋으로 만들어 학습에 사용했습니다.
 
 
 ### Using Tensorlfow - Minki Kang, Minkyu Kim
 
- For easy implementation, we use VGG or DenseNet which are made in Tensorflow so that input image size change to 224 x 224 when we use VGG as backbone network.
-we choose same training method with YOLO, except that we use [ModelCheckpoint](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ModelCheckpoint) and do not use data argumentation in training dataset. By using ModelCheckpoint, we get the model that has lowest validation loss in training
+ 원래 Backbone으로 쓰던 [DarkNet](https://pjreddie.com/darknet/)이 Tensorflow로 구현된게 없었기 때문에 VGG와 DenseNet을 Backbone으로 사용했습니다. 학습을 위한 learning rate, momentum, weight decay는 논문에 있던 수치를 그대로 사용했고 여기에 [ModelCheckpoint](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ModelCheckpoint)를 사용해 훈련 도중에 Verification loss가 줄어들 경우 학습된 가중치를 저장해 훈련 중 가장 낮은 Verification loss를 가진 YOLO 최종 모델로 사용할 수 있게 만들었습니다. 
+그리고 구현의 어려움으로 인해 Data augmentation을 구현하지 못했습니다.
+
 
 #### test result
-when we test our YOLO in training and test dataset. it shows good performance in training dataset, but poor performance in test dataset(overfitting). we think the reason of overfitting is skipping data argumentation in training set
+ 
+ 학습용 데이터셋과 테스트용 데이터셋을 이용해 구현한 YOLO를 테스트 해본 결과, 학습용 데이터셋에서는 좋은 결과를 보여줬지만 테스트용 데이터셋에서는 좋은 결과를 보여주지 못했습니다. 오버피팅(Overfitting)이 일어난겁니다. 오버피팅이 일어난 이유로 Data augmentation을 구현하지 않아 다양하게 구성된 데이터셋에서 학습받지 못해서 일어난 것이라 판단하고 있습니다.
+
 
 ### Using Pytorch - Taeyun Kim, Seungyeon Lee
 
@@ -42,12 +48,11 @@ when we test our YOLO in training and test dataset. it shows good performance in
 
 ## How to test our model
 
-Minki Kang : 
+강민기 : 
 
-Minkyu Kim : download YOLO_test.ipynb in YOLOv1_implement_using_Tensorflow_or_Pytorch/MinKyu Kim/ and yolo-minkyuKim.h5 in [this](https://drive.google.com/file/d/18wl62z2sU3O6NUl45K7iYSzWnGlpUYzV/view?usp=sharing). After download these files, put these files in same directory and Run the codes in YOLO_test.ipynb 
+김민규 : 'YOLOv1_implement_using_Tensorflow_or_Pytorch/MinKyu Kim/'에 있는 YOLO_test.ipynb과  [여기](https://drive.google.com/file/d/18wl62z2sU3O6NUl45K7iYSzWnGlpUYzV/view?usp=sharing)에 있는 yolo-minkyuKim.h5를 다운받아 같은 경로에 놔둡니다. 그리고 YOLO_test.ipynb를 실행한 뒤 코드를 위에서부터 차례대로 실행시킵니다.
 
-* You can put these files in different locations, but if you do this, you should modify the yolo-minkyuKim.h5's path in YOLO.load_weights() which in load_YOLO()
 
-Taeyun Kim & Seungyeon Lee : 
+김태윤 & 이승연 : 
 
 
