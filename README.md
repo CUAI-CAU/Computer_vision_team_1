@@ -39,6 +39,8 @@ YOLO v1 : https://arxiv.org/abs/1506.02640
 
 #### test result
  
+ ![test image](https://user-images.githubusercontent.com/50979281/131445170-794469fb-2c6c-434b-bb60-4e3e216b0119.png)
+ 
  학습용 데이터셋과 테스트용 데이터셋을 이용해 구현한 YOLO를 테스트 해본 결과, 학습용 데이터셋에서는 좋은 결과를 보여줬지만 테스트용 데이터셋에서는 좋은 결과를 보여주지 못했습니다. 오버피팅(Overfitting)이 일어난겁니다. 오버피팅이 일어난 이유로 Data augmentation을 구현하지 않아 다양하게 구성된 데이터셋에서 학습받지 못해서 일어난 것이라 판단하고 있습니다.
 
 
