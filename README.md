@@ -1,35 +1,60 @@
-# Computer_vision_team_1 : YOLO v1 논문 구현 시도
+# YOLOv1_implement_using_Tensorflow_or_Pytorch(텐서플로우, 파이토치를 이용한 YOLO구현
 
 <img width="618" alt="YOLO_architecture" src="https://user-images.githubusercontent.com/50979281/130927332-1aefef43-c67e-48db-98fe-68cd0a1ad629.png">
-쿠아이 하계 컨퍼런스를 위해 컴퓨터비전 1팀에서 YOLO v1(You Only Look Once: Unified, Real-Time Object Detection)을 텐서플로우와 파이토치로 구현했습니다. 
+
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCUAI-CAU%2FYOLOv1_implement_using_Tensorflow_or_Pytorch&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
+
+[텐서플로우](https://www.tensorflow.org)와 [파이토치](https://pytorch.org)를 이용해 YOLO의 최초 버전인 YOLO v1을 구현하며 객체탐지 모델이 어떤 과정을 거쳐 객체를 탐지하는지 알아보는 시간을 가졌습니다. 
+
 
 YOLO v1 : https://arxiv.org/abs/1506.02640
 
 ## Members
-강민기(소프트웨어학부), 김민규(전자전기공학부), 김태윤(소프트웨어학부),이승연(소프트웨어학부)
 
-## 소논문
+[강민기](https://github.com/bbx8216)(School of Computer Science and Engineering, Chung-Ang University)
+<br>
+[김민규](https://github.com/MinkyuKim26)(School of Electrical and Electronics Engineering)
+<br>
+[김태윤](https://github.com/KimTaeYun02)(School of Computer Science and Engineering, Chung-Ang University)
+<br>
+[이승연](https://github.com/tmddus2)(School of Computer Science and Engineering, Chung-Ang University)
+
+## Short paper
 작성중!
 
-## 구현 방식
+## How to implement
 
-### 텐서플로우를 이용해 구현 - 강민기, 김민규
+### Dataset
 
-강민기 : DenseNet-121을 Backbone으로 사용했습니다. 
+학습, 테스트를 위한 데이터셋으로 [PASCAL VOC 2007](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) 을 사용했습니다. PASCAL VOC 2007은 학습용, 테스트용으로 데이터셋을 나눴는데 학습용 데이터셋의 양을 보존하기 위해 테스트용 데이터셋의 일부를 떼어 검증용 데이터셋으로 만들어 학습에 사용했습니다.
 
-김민규 : 구현 난이도를 이유로 Backbone을 VGG-16으로 변경하고 데이터 증강을 구현하지 않았습니다. 훈련 방법은 논문에 나온 값(배치 사이즈, 에포크 등)을 그대로 사용했고 매 에포크마다 검증 로스(검증용 데이터셋에 대한 로스, Verification Loss)가 줄어들면 저장하여 검증 로스가 가장 낮은 모델을 최종 훈련 모델로 선택하였습니다. 
-테스트 결과, 훈련용 데이터셋에 오버피팅되어 테스트용 데이터셋에서는 좋지 못한 성능을 보여줬습니다. 데이터 증강을 구현하지 못한 것이 오버피팅의 주요 원인이라 생각됩니다.
 
-### 파이토치를 이용해 구현 - 김태윤, 이승연
+### Using Tensorlfow - Minki Kang, Minkyu Kim
 
-김태윤 + 이승연 : 파이토치로 구현된 DarkNet을 backbone으로 사용했습니다. 
+ 원래 Backbone으로 쓰던 [DarkNet](https://pjreddie.com/darknet/)이 Tensorflow로 구현된게 없었기 때문에 VGG와 DenseNet을 Backbone으로 사용했습니다. 학습을 위한 learning rate, momentum, weight decay는 논문에 있던 수치를 그대로 사용했고 여기에 [ModelCheckpoint](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ModelCheckpoint)를 사용해 훈련 도중에 Verification loss가 줄어들 경우 학습된 가중치를 저장해 훈련 중 가장 낮은 Verification loss를 가진 YOLO 최종 모델로 사용할 수 있게 만들었습니다. 
+그리고 구현의 어려움으로 인해 Data augmentation을 구현하지 못했습니다.
 
-## 구현 모델 테스트 방법
+
+#### test result
+ 
+ ![test image](https://user-images.githubusercontent.com/50979281/131445170-794469fb-2c6c-434b-bb60-4e3e216b0119.png)
+ 
+ 학습용 데이터셋과 테스트용 데이터셋을 이용해 구현한 YOLO를 테스트 해본 결과, 학습용 데이터셋에서는 좋은 결과를 보여줬지만 테스트용 데이터셋에서는 좋은 결과를 보여주지 못했습니다. 오버피팅(Overfitting)이 일어난겁니다. 오버피팅이 일어난 이유로 Data augmentation을 구현하지 않아 다양하게 구성된 데이터셋에서 학습받지 못해서 일어난 것이라 판단하고 있습니다.
+
+
+### Using Pytorch - Taeyun Kim, Seungyeon Lee
+
+
+
+## How to test our model
 
 강민기 : 
 
-김민규 : Minkyu Kim폴더에 있는 YOLO_test.ipynb와 구글 드라이브(https://drive.google.com/file/d/18wl62z2sU3O6NUl45K7iYSzWnGlpUYzV/view?usp=sharing)에 있는 yolo-minkyuKim.h5를 다운받은 뒤 두 파일을 같은 위치에 놓고 YOLO_test.ipynb에 있는 블록을 위에서부터 차례대로 실행시키시거나  load_YOLO()에 있는 YOLO.load_weights()의 파일 경로를 yolo-minkyuKim.h5의 경로에 맞게 수정하신 뒤 위에서부터 차례대로 실행시키시면 됩니다.
+김민규 : 'YOLOv1_implement_using_Tensorflow_or_Pytorch/MinKyu Kim/'에 있는 YOLO_test.ipynb과  [여기](https://drive.google.com/file/d/18wl62z2sU3O6NUl45K7iYSzWnGlpUYzV/view?usp=sharing)에 있는 yolo-minkyuKim.h5를 다운받아 같은 경로에 놔둡니다. 그리고 YOLO_test.ipynb를 실행한 뒤 코드를 위에서부터 차례대로 실행시킵니다.
 
-김태윤 + 이승연 : 
+
+김태윤 & 이승연 : 
 
 
