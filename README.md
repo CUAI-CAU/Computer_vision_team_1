@@ -45,8 +45,8 @@ YOLO v1 : https://arxiv.org/abs/1506.02640
 
 
 ### Using Pytorch - Taeyun Kim, Seungyeon Lee
-
-
+ 파이토치를 통해 구현해보는 것이 처음이었기 때문에 이미 구현된 코드(https://github.com/aladdinpersson/Machine-Learning-Collection)를 보며 각주를 달고 이해하는 활동을 하였다. 구현된 코드에서는 원래 Backbone으로 사용한 Darknet을 구현하여 사용하였다. 구현된 모델을 학습시키는 과정에서 DataLoader 중에서 num_workers 관련 에러가 발생하여 YOLO 최종 모델을 구현하지는 못했습니다.
+ 
 
 ## How to test our model
 
@@ -55,6 +55,5 @@ YOLO v1 : https://arxiv.org/abs/1506.02640
 김민규 : 'YOLOv1_implement_using_Tensorflow_or_Pytorch/MinKyu Kim/'에 있는 YOLO_test.ipynb과  [여기](https://drive.google.com/file/d/18wl62z2sU3O6NUl45K7iYSzWnGlpUYzV/view?usp=sharing)에 있는 yolo-minkyuKim.h5를 다운받아 같은 경로에 놔둡니다. 그리고 YOLO_test.ipynb를 실행한 뒤 코드를 위에서부터 차례대로 실행시킵니다.
 
 
-김태윤 & 이승연 : 
 
 
