@@ -50,11 +50,9 @@ YOLO v1 : https://arxiv.org/abs/1506.02640
 
 ## How to test our model
 
-강민기 : 
-
-김민규 : 'YOLOv1_implement_using_Tensorflow_or_Pytorch/MinKyu Kim/'에 있는 YOLO_test.ipynb과  [여기](https://drive.google.com/file/d/18wl62z2sU3O6NUl45K7iYSzWnGlpUYzV/view?usp=sharing)에 있는 yolo-minkyuKim.h5를 다운받아 같은 경로에 놔둡니다. 그리고 YOLO_test.ipynb를 실행한 뒤 코드를 위에서부터 차례대로 실행시킵니다.
+Tensorflow : 'YOLOv1_implement_using_Tensorflow_or_Pytorch/MinKyu Kim/'에 있는 YOLO_test.ipynb과  [여기](https://drive.google.com/file/d/18wl62z2sU3O6NUl45K7iYSzWnGlpUYzV/view?usp=sharing)에 있는 yolo-minkyuKim.h5를 다운받아 같은 경로에 놔둡니다. 그리고 YOLO_test.ipynb를 실행한 뒤 코드를 위에서부터 차례대로 실행시킵니다.
 
 
-김태윤 & 이승연 : 
+Pytorch : 학습과정에서 오류가 발생해 테스트를 할 수 없습니다
 
 
