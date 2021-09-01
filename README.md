@@ -1,4 +1,4 @@
-# YOLOv1_implement_using_Tensorflow_or_Pytorch(텐서플로우, 파이토치를 이용한 YOLO구현
+# YOLOv1_implement_using_Tensorflow_or_Pytorch(텐서플로우, 파이토치를 이용한 YOLO구현)
 
 <img width="618" alt="YOLO_architecture" src="https://user-images.githubusercontent.com/50979281/130927332-1aefef43-c67e-48db-98fe-68cd0a1ad629.png">
 
@@ -22,7 +22,7 @@ YOLO v1 : https://arxiv.org/abs/1506.02640
 [이승연](https://github.com/tmddus2)(School of Computer Science and Engineering, Chung-Ang University)
 
 ## Short paper
-작성중!
+[여기](https://docs.google.com/document/d/1BKXV3yE6hFHK91Gt3nxj80b94T29BJ17/edit?usp=sharing&ouid=114938142482768762996&rtpof=true&sd=true)서 확인하실 수 있습니다
 
 ## How to implement
 
@@ -45,16 +45,16 @@ YOLO v1 : https://arxiv.org/abs/1506.02640
 
 
 ### Using Pytorch - Taeyun Kim, Seungyeon Lee
-
+ 
+  파이토치를 통해 구현해보는 것이 처음이었기 때문에 이미 구현된 코드(https://github.com/aladdinpersson/Machine-Learning-Collection)를 보며 각주를 달고 이해하는 활동을 하였습니다. 학습시키는 과정에서 DataLoader 중에서 num_workers 관련 에러가 발생하여 YOLO 최종 모델을 구현하지는 못했습니다.
+ 
 
 
 ## How to test our model
 
-강민기 : 
-
-김민규 : 'YOLOv1_implement_using_Tensorflow_or_Pytorch/MinKyu Kim/'에 있는 YOLO_test.ipynb과  [여기](https://drive.google.com/file/d/18wl62z2sU3O6NUl45K7iYSzWnGlpUYzV/view?usp=sharing)에 있는 yolo-minkyuKim.h5를 다운받아 같은 경로에 놔둡니다. 그리고 YOLO_test.ipynb를 실행한 뒤 코드를 위에서부터 차례대로 실행시킵니다.
+Tensorflow : 'YOLOv1_implement_using_Tensorflow_or_Pytorch/MinKyu Kim/'에 있는 YOLO_test.ipynb과  [여기](https://drive.google.com/file/d/18wl62z2sU3O6NUl45K7iYSzWnGlpUYzV/view?usp=sharing)에 있는 yolo-minkyuKim.h5를 다운받아 같은 경로에 놔둡니다. 그리고 YOLO_test.ipynb를 실행한 뒤 코드를 위에서부터 차례대로 실행시킵니다.
 
 
-김태윤 & 이승연 : 
+Pytorch : 학습과정에서 오류가 발생해 테스트를 할 수 없습니다
 
 
