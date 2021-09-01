@@ -45,7 +45,9 @@ YOLO v1 : https://arxiv.org/abs/1506.02640
 
 
 ### Using Pytorch - Taeyun Kim, Seungyeon Lee
-
+ 
+  파이토치를 통해 구현해보는 것이 처음이었기 때문에 이미 구현된 코드(https://github.com/aladdinpersson/Machine-Learning-Collection)를 보며 각주를 달고 이해하는 활동을 하였습니다. 학습시키는 과정에서 DataLoader 중에서 num_workers 관련 에러가 발생하여 YOLO 최종 모델을 구현하지는 못했습니다.
+ 
 
 
 ## How to test our model
