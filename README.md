@@ -22,7 +22,7 @@ YOLO v1 : https://arxiv.org/abs/1506.02640
 [이승연](https://github.com/tmddus2)(School of Computer Science and Engineering, Chung-Ang University)
 
 ## Short paper
-[여기](https://docs.google.com/document/d/1BKXV3yE6hFHK91Gt3nxj80b94T29BJ17/edit?usp=sharing&ouid=114938142482768762996&rtpof=true&sd=true)서 확인하실 수 있습니다
+[여기](https://drive.google.com/file/d/1g2HjpD63xDjBhBL8mJzcx-P33yiGIe2L/view?usp=sharing)서 확인하실 수 있습니다
 
 ## How to implement
 
